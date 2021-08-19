@@ -165,6 +165,9 @@ void MeterApator162::processContent(Telegram *t)
         debug("(apator162) adjusting to offset %d instead\n", o);
     }
 
+    o = 32
+    strprintf(total, "%02x%02x%02x%02x", content[o], content[o+1], content[o+2], content[o+3]);
+
     vendor_values["0413"] = { 25, DVEntry(MeasurementType::Instantaneous, 0x13, 0, 0, 0, total) };
     int offset;
     string key;

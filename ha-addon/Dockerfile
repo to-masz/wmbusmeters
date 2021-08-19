@@ -4,7 +4,7 @@ FROM $BUILD_FROM AS build
 ENV LANG C.UTF-8
 
 RUN apk add --no-cache alpine-sdk gcc linux-headers ncurses-dev librtlsdr-dev cmake libusb-dev
-RUN git clone https://github.com/weetmuts/wmbusmeters.git && \
+RUN git clone https://github.com/to-masz/wmbusmeters.git && \
     git clone https://github.com/weetmuts/rtl-wmbus.git && \
     git clone https://github.com/merbanan/rtl_433.git
 WORKDIR /wmbusmeters
