@@ -6,7 +6,7 @@ ENV LANG C.UTF-8
 RUN apk add --no-cache alpine-sdk gcc linux-headers ncurses-dev librtlsdr-dev cmake libusb-dev
 
 ADD https://api.github.com/repos/to-masz/wmbusmeters/git/refs/heads/ha-addon-custom version.json
-RUN git -b ha-addon-custom clone https://github.com/to-masz/wmbusmeters.git
+RUN git clone -b ha-addon-custom https://github.com/to-masz/wmbusmeters.git
 RUN git clone https://github.com/weetmuts/rtl-wmbus.git
 RUN git clone https://github.com/merbanan/rtl_433.git
 WORKDIR /wmbusmeters
