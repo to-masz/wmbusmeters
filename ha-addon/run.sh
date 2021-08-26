@@ -10,10 +10,10 @@ MQTT_HOST=$(bashio::config "mqtt.host")
 MQTT_PORT=$(bashio::config "mqtt.port")
 MQTT_USER=$(bashio::config "mqtt.username")
 MQTT_PASSWORD=$(bashio::config "mqtt.password")
-echo ${MQTT_HOST}
-echo ${MQTT_PORT}
-echo ${MQTT_USERNAME}
-echo ${MQTT_PASSWORD}
+echo $MQTT_HOST
+echo $MQTT_PORT
+echo $MQTT_USERNAME
+echo $MQTT_PASSWORD
 
 if ! bashio::config.exists 'mqtt.host'; then MQTT_HOST=$(bashio::services mqtt "host"); fi
 if ! bashio::config.exists 'mqtt.port'; then MQTT_PORT=$(bashio::services mqtt "port"); fi
