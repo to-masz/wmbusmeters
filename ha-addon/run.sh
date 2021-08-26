@@ -26,7 +26,8 @@ echo 'TOPIC=$1' >> /wmbusmeters/mosquitto_pub.sh
 echo "\n" >> /wmbusmeters/mosquitto_pub.sh
 echo 'MESSAGE=$2' >> /wmbusmeters/mosquitto_pub.sh
 echo "\n\n" >> /wmbusmeters/mosquitto_pub.sh
-echo "/usr/bin/mosquitto_pub -h \"${MQTT_HOST}\" -p \"${MQTT_PORT}\" -u \"${MQTT_USER}\" -P \"${MQTT_PASSWORD}\" -t $TOPIC -m \"$MESSAGE\"" >> /wmbusmeters/mosquitto_pub.sh
+echo -n "/usr/bin/mosquitto_pub -h \"${MQTT_HOST}\" -p ${MQTT_PORT} -u \"${MQTT_USER}\" -P \"${MQTT_PASSWORD}\"" >> /wmbusmeters/mosquitto_pub.sh
+echo '-t $TOPIC -m "$MESSAGE"' >> /wmbusmeters/mosquitto_pub.sh
 EOF
 chmod a+x /wmbusmeters/mosquitto_pub.sh
 
