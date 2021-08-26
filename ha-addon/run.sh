@@ -22,8 +22,8 @@ bashio::log.info "Username: ${MQTT_USER}"
 echo "Creating mosquitto_pub.sh"
 touch /wmbusmeters/mosquitto_pub.sh
 echo "#!/usr/bin/with-contenv bashion\n" > /wmbusmeters/mosquitto_pub.sh
-echo "TOPIC=$1\n" >> /wmbusmeters/mosquitto_pub.sh
-echo "MESSAGE=$2\n\n" >> /wmbusmeters/mosquitto_pub.sh
+echo "TOPIC=\$1\n" >> /wmbusmeters/mosquitto_pub.sh
+echo "MESSAGE=\$2\n\n" >> /wmbusmeters/mosquitto_pub.sh
 echo "/usr/bin/mosquitto_pub -h \"${MQTT_HOST}\" -p \"${MQTT_PORT}\" -u \"${MQTT_USER}\" -P \"${MQTT_PASSWORD}\" -t $TOPIC -m \"$MESSAGE\"" >> /wmbusmeters/mosquitto_pub.sh
 EOF
 chmod a+x /wmbusmeters/mosquitto_pub.sh
