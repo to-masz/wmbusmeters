@@ -11,13 +11,15 @@ MQTT_PORT=$(bashio::config "mqtt.port")
 MQTT_USER=$(bashio::config "mqtt.username")
 MQTT_PASSWORD=$(bashio::config "mqtt.password")
 
-bashio::log.info "${MQTT_HOST}"
-bashio::log.info "${MQTT_PASSWORD}"
-
 if ! bashio::config.exists 'mqtt.host'; then MQTT_HOST=$(bashio::services mqtt "host"); fi
 if ! bashio::config.exists 'mqtt.port'; then MQTT_PORT=$(bashio::services mqtt "port"); fi
 if ! bashio::config.exists 'mqtt.username'; then MQTT_USER=$(bashio::services mqtt "username"); fi
 if ! bashio::config.exists 'mqtt.password'; then MQTT_PASSWORD=$(bashio::services mqtt "password"); fi
+
+bashio::log.info "${MQTT_HOST}"
+bashio::log.info "${MQTT_PASSWORD}"
+
+
 
 echo "Creating mosquitto_pub.sh"
 cat > /wmbusmeters/mosquitto_pub.sh <<- "EOF"
