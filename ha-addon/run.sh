@@ -6,10 +6,10 @@ CONFIG_DATA_PATH=$(bashio::config 'data_path')
 CONFIG_CONF="$(jq --raw-output -c -M '.conf' $CONFIG_PATH)"
 CONFIG_METERS="$(jq --raw-output -c -M '.meters' $CONFIG_PATH)"
 
-MQTT_HOST=$(bashio::config 'mqtt.host')
-MQTT_PORT=$(bashio::config 'mqtt.port')
-MQTT_USER=$(bashio::config 'mqtt.username')
-MQTT_PASSWORD=$(bashio::config 'mqtt.password')
+MQTT_HOST=$(bashio::config "mqtt.host")
+MQTT_PORT=$(bashio::config "mqtt.port")
+MQTT_USER=$(bashio::config "mqtt.username")
+MQTT_PASSWORD=$(bashio::config "mqtt.password")
 echo ${MQTT_HOST}
 echo ${MQTT_PORT}
 echo ${MQTT_USERNAME}
