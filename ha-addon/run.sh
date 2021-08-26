@@ -21,7 +21,7 @@ if ! bashio::config.exists 'mqtt.username'; then MQTT_USER=$(bashio::services mq
 if ! bashio::config.exists 'mqtt.password'; then MQTT_PASSWORD=$(bashio::services mqtt "password"); fi
 
 echo "Creating mosquitto_pub.sh"
-cat > /wmbusmeters/mosquitto_pub.sh <<EOF
+cat > /wmbusmeters/mosquitto_pub.sh <<- "EOF"
 #!/usr/bin/with-contenv bashio
 
 TOPIC=$1
