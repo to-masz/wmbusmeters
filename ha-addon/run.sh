@@ -14,6 +14,7 @@ echo $MQTT_HOST
 echo $MQTT_PORT
 echo $MQTT_USERNAME
 echo $MQTT_PASSWORD
+printenv
 
 if ! bashio::config.exists 'mqtt.host'; then MQTT_HOST=$(bashio::services mqtt "host"); fi
 if ! bashio::config.exists 'mqtt.port'; then MQTT_PORT=$(bashio::services mqtt "port"); fi
