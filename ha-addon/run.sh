@@ -27,7 +27,7 @@ cat > /wmbusmeters/mosquitto_pub.sh <<- "EOF"
 TOPIC=$1
 MESSAGE=$2
 
-/usr/bin/mosquitto_pub -h "$MQTT_HOST" -p "$MQTT_PORT" -u "$MQTT_USER" -P "$MQTT_PASSWORD" -t $TOPIC -m "$MESSAGE"
+/usr/bin/mosquitto_pub -h "`$MQTT_HOST`" -p "`$MQTT_PORT`" -u "`$MQTT_USER`" -P "``$MQTT_PASSWORD" -t $TOPIC -m "$MESSAGE"
 EOF
 chmod a+x /wmbusmeters/mosquitto_pub.sh
 
