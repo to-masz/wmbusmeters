@@ -1,6 +1,6 @@
 {
     "name": "Wmbusmeters (W-MBus to MQTT)",
-    "version": "0.2.35",
+    "version": "0.2.37",
     "slug": "wmbusmeters",
     "description": "Acquire utility meter readings using the wireless mbus protocol (WMBUS)",
     "arch": ["armv7", "aarch64", "amd64"],
@@ -31,7 +31,7 @@
         "mqtt": {
           "host": "str?",
           "port": "port?",
-          "user": "str?",
+          "username": "str?",
           "password": "str?"
         }
     }
