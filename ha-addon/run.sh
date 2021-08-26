@@ -11,10 +11,10 @@ MQTT_PORT=$(bashio::config "mqtt.port")
 MQTT_USER=$(bashio::config "mqtt.username")
 MQTT_PASSWORD=$(bashio::config "mqtt.password")
 
-if ! bashio::config.exists 'mqtt.host'; then MQTT_HOST=$(bashio::services mqtt "host"); fi
-if ! bashio::config.exists 'mqtt.port'; then MQTT_PORT=$(bashio::services mqtt "port"); fi
-if ! bashio::config.exists 'mqtt.username'; then MQTT_USER=$(bashio::services mqtt "username"); fi
-if ! bashio::config.exists 'mqtt.password'; then MQTT_PASSWORD=$(bashio::services mqtt "password"); fi
+if ! bashio::config.exists "mqtt.host"; then MQTT_HOST=$(bashio::services mqtt "host"); fi
+if ! bashio::config.exists "mqtt.port"; then MQTT_PORT=$(bashio::services mqtt "port"); fi
+if ! bashio::config.exists "mqtt.username"; then MQTT_USER=$(bashio::services mqtt "username"); fi
+if ! bashio::config.exists "mqtt.password"; then MQTT_PASSWORD=$(bashio::services mqtt "password"); fi
 
 bashio::log.info "Host: ${MQTT_HOST}"
 bashio::log.info "Username: ${MQTT_USER}"
