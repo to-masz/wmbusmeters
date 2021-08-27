@@ -16,11 +16,12 @@ if ! bashio::config.exists "mqtt.port"; then MQTT_PORT=$(bashio::services mqtt "
 if ! bashio::config.exists "mqtt.username"; then MQTT_USER=$(bashio::services mqtt "username"); fi
 if ! bashio::config.exists "mqtt.password"; then MQTT_PASSWORD=$(bashio::services mqtt "password"); fi
 
+bashio::log.info "MQTT details:"
 bashio::log.info "Host: ${MQTT_HOST}"
 bashio::log.info "Port: ${MQTT_PORT}"
 bashio::log.info "Username: ${MQTT_USER}"
-bashio::log.info "Password: ${MQTT_PASSWORD}"
 
+# dirty hack, but it works.
 echo "Creating mosquitto_pub.sh"
 touch /wmbusmeters/mosquitto_pub.sh
 echo "#!/bin/sh" > /wmbusmeters/mosquitto_pub.sh
